@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1543244361 source:c:\users\jaqueline\desktop\fila\main.cpp
+	<iostream>
+	"Fila.h"
+
+1543244360 c:\users\jaqueline\desktop\fila\include\fila.h
+
