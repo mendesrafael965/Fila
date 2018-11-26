@@ -17,6 +17,7 @@ class Fila
         void remover(int n);
         int menor();
         bool operator ==(Fila x);
+        void operator =(Fila x);
         void imprime();
 
     private:

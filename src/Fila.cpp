@@ -67,6 +67,14 @@ bool Fila::operator ==(Fila x){
     }
     return true;
 }
+
+void Fila::operator =(Fila x){
+    fim_->dir = fim_;
+    fim_->esq = fim_;
+    for(no* i = x.fim_->dir; i != x.fim_; i = i->dir){
+        inserir(i->chave);
+    }
+}
 void Fila::imprime(){
     no* i;
     for(i = fim_->dir; i != fim_; i = i->dir){

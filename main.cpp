@@ -7,20 +7,19 @@ using std::endl;
 int main()
 {
     Fila f1,f2;
-    for(int i = 5; i < 15; i++){
+    for(int i = 0; i < 10; i++){
         f1.inserir(i);
     }
-
-    for(int i = 5; i < 14; i++){
+    for(int i = 10; i < 20; i++){
         f2.inserir(i);
     }
+
+    f2=f1;
     if(f1==f2)
         cout << "Funciona" << endl;
-    f1.inserir(3);
-    f1.inserir(6);
-    f1.remover(7);
-    f1.imprime();
-    cout << endl << f1.menor() << endl;
+
+    f2.imprime();
+
 
     return 0;
 }
