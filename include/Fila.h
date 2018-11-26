@@ -15,6 +15,8 @@ class Fila
         bool pertence(int n);
         void inserir(int n);
         void remover(int n);
+        int menor();
+        bool operator ==(Fila x);
         void imprime();
 
     private:

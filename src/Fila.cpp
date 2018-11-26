@@ -16,14 +16,12 @@ Fila::~Fila()
 }
 
 bool Fila::pertence(int n){
-    no* i = fim_->dir;
-    while(i != fim_ && i->chave != n){
-        i = i->dir;
+    for(no* i = fim_->dir; i != fim_; i = i->dir){
+        if(i->chave == n){
+            return true;
+        }
     }
-    if(i == fim_){
-        return false;
-    }
-    return true;
+    return false;
 }
 
 void Fila::inserir(int n){
@@ -38,6 +36,7 @@ void Fila::inserir(int n){
         in->dir = i->esq->dir;
         i->esq = in;
         in->esq->dir = in;
+
     }
 }
 
@@ -50,8 +49,24 @@ void Fila::remover(int n){
         i->esq->dir = i->dir;
         i->dir->esq = i->esq;
     }
+    delete i;
 }
 
+int Fila::menor(){
+    return fim_->dir->chave;
+}
+
+bool Fila::operator ==(Fila x){
+
+    no* j = x.fim_->dir;
+    for(no* i = fim_->dir; i != fim_; i = i->dir){
+        if(i->chave != j->chave){
+            return false;
+        }
+        j = j->dir;
+    }
+    return true;
+}
 void Fila::imprime(){
     no* i;
     for(i = fim_->dir; i != fim_; i = i->dir){
