@@ -12,6 +12,7 @@ class Fila
     public:
         Fila();
         virtual ~Fila();
+        bool pertence(int n);
         void inserir(int n);
         void imprime();
 
