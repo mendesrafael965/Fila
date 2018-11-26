@@ -16,7 +16,6 @@ class Fila
         void inserir(int n);
         void imprime();
 
-
     private:
         no* fim_;
 };

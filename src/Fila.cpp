@@ -28,12 +28,16 @@ bool Fila::pertence(int n){
 
 void Fila::inserir(int n){
     if(!pertence(n)){
+        no* i = fim_->dir;
+        while(i != fim_ && i->chave < n){
+            i = i->dir;
+        }
         no* in = new no;
         in->chave = n;
-        in->esq = fim_;
-        in->dir = fim_->dir;
-        fim_->dir = in;
-        in->dir->esq = in;
+        in->esq = i->esq;
+        in->dir = i->esq->dir;
+        i->esq = in;
+        in->esq->dir = in;
     }
 }
 

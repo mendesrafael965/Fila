@@ -7,10 +7,10 @@ using std::endl;
 int main()
 {
     Fila f1;
-    for(int i = 0; i < 10; i++){
+    for(int i = 5; i < 15; i++){
         f1.inserir(i);
     }
-    f1.inserir(9);
+    f1.inserir(3);
     f1.imprime();
 
     return 0;
