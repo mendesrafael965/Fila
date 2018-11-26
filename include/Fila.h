@@ -14,6 +14,7 @@ class Fila
         virtual ~Fila();
         bool pertence(int n);
         void inserir(int n);
+        void remover(int n);
         void imprime();
 
     private:

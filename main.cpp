@@ -11,6 +11,7 @@ int main()
         f1.inserir(i);
     }
     f1.inserir(3);
+    //f1.remover(7);
     f1.imprime();
 
     return 0;

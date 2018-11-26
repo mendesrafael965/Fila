@@ -41,6 +41,17 @@ void Fila::inserir(int n){
     }
 }
 
+void Fila::remover(int n){
+    no* i = fim_->dir;
+    while(i != fim_ && i->chave != n){
+        i = i->dir;
+    }
+    if(i != fim_){
+        i->esq->dir = i->dir;
+        i->dir->esq = i->esq;
+    }
+}
+
 void Fila::imprime(){
     no* i;
     for(i = fim_->dir; i != fim_; i = i->dir){
