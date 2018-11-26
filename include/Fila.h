@@ -12,6 +12,9 @@ class Fila
     public:
         Fila();
         virtual ~Fila();
+        void inserir(int n);
+        void imprime();
+
 
     private:
         no* fim_;

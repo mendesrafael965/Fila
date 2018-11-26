@@ -1,4 +1,8 @@
 #include "Fila.h"
+#include <iostream>
+
+using std::cout;
+using std::endl;
 
 Fila::Fila(){
     fim_ = new no;
@@ -8,5 +12,27 @@ Fila::Fila(){
 
 Fila::~Fila()
 {
-    //dtor
+    delete [] fim_;
+}
+
+void Fila::inserir(int n){
+    no* i = fim_->dir;
+    while(i != fim_ && i->chave != n){
+        i = i->dir;
+    }
+    //if(i == fim_){
+        no* in = new no;
+        in->chave = n;
+        in->esq = fim_;
+        in->dir = fim_->dir;
+        fim_->dir = in;
+        in->dir->esq = in;
+    //}
+}
+
+void Fila::imprime(){
+    no* i;
+    for(i = fim_->dir; i != fim_; i = i->dir){
+        cout << i->chave << endl;
+    }
 }
